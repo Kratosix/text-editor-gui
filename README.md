@@ -3,6 +3,6 @@ It isn't really functional, but it does work.
 
 ## How to run
 1. sh build.sh
-s
+
 ## Requirements
 1. Make
