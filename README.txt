@@ -7,7 +7,7 @@ Step 2:
 go to the source code directory
 
 ```
-cd text-editor-gui
+cd text-editor-gui/text-editor-gui
 cd src/
 make
 ```
