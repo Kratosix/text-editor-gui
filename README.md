@@ -1,5 +1,4 @@
 You can build using make.
-![image](./example.png)
 
 Step 1:
 Clone the repo, "git clone https://github.com/kratosix/text-editor-gui"
@@ -13,3 +12,5 @@ cd src/
 make
 ```
 It'll build an executable called "example_glfw_opengl3"
+
+![image](./example.png)
