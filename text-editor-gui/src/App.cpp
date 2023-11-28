@@ -12,6 +12,7 @@ void center_next_window(){
 }
 void show_modal_for_opening(bool * can_open){
 	ImGui::OpenPopup("Open file");
+	center_next_window();
 	ImGui::PushStyleColor(ImGuiCol_PopupBg, GREY);
 	ImGui::PushStyleColor(ImGuiCol_Border, GREY);
 	ImGui::PushStyleColor(ImGuiCol_CheckMark, GREY);
@@ -31,6 +32,7 @@ void show_modal_for_opening(bool * can_open){
 
 void show_modal_for_saving(bool * open){
 	ImGui::OpenPopup("Save file");
+	center_next_window();
 	ImGui::PushStyleColor(ImGuiCol_PopupBg, GREY);
 	ImGui::PushStyleColor(ImGuiCol_Button, GREY);
 	ImGui::PushStyleColor(ImGuiCol_Border, GREY);
@@ -100,17 +102,21 @@ void Myapp::renderUI(){
 
 	static bool exit = false;
 
+	//Bunch of conditions to see if I can make modals
 	if(exit)
 		std::exit(0);
 
-	if(show_creation_modal)
+	if(show_creation_modal){
 		show_modal_for_creation(&show_creation_modal);
+	}
 
-	if(show_opening_modal)
+	if(show_opening_modal){
 		show_modal_for_opening(&show_opening_modal);
-	if(show_saving_modal)
+	}
+	if(show_saving_modal){
 		show_modal_for_saving(&show_saving_modal);
-
+	}
+	//
 	if(ImGui::BeginMenuBar()){
 		if(ImGui::BeginMenu("File")){
       ImGui::MenuItem("New" ,"CTRL+N", &show_creation_modal, true);
